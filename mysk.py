@@ -6,15 +6,15 @@ mu2 = (0.8, 0.6)
 mu3 = (0.1, 0.2)
 mu4 = (1.0, 0.3)
 sigma = 0.3
+d = 2
 
-def generate_points(N = 200, mu1 = mu1, mu2 = mu2, mu3 = mu3, mu4 = mu4, sigma = sigma, seed = None):
+def generate_points(N = 200, seed = 0):
     from sklearn.datasets import make_blobs
-    from numpy import array, random
-    
-    if not (seed is None):
-        random.seed(seed)
-    X, _ = make_blobs(n_samples = N, centers = [mu1, mu2, mu3, mu4], cluster_std = sigma, shuffle = False)
-    y = array(N/2*[0] + N/2*[1])
+    X, y = make_blobs(n_samples = N, centers = [mu1, mu2, mu3, mu4], cluster_std = sigma, 
+                      shuffle = False, random_state = seed)
+    y[y == 1] = 0
+    y[y == 2] = 1
+    y[y == 3] = 1
     return X, y
 
 def draw_points(X, y):
