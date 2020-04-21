@@ -1,4 +1,4 @@
-Price,Date,Lat,Lng,Housing,Floors,House,Rooms,Floor,Area
+Price,Date,Lat,Lng,Housing,Floors,Building,Rooms,Floor,Area
 3500,240,56.365696,43.82025,0,9,Brick,3,4,60
 4000,240,56.3230570451,44.0078615887,0,3,Brick,3,3,57
 2150,240,56.267552,43.892107,0,5,Panel,2,1,38
